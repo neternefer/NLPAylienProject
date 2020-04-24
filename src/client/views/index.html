@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprehension</title>
+</head>
+<body>
+    <div class="grid">
+        <header>
+            <h1>Comprehension</h1>
+        </header>
+        <main>
+            <div class="introduction flex-item">
+                <p>Can machines understand us?</p>
+                <p>Not just our words but the feelings behind them.</p>
+                <p><span>Aylien API</span> gives you the chance to find out.</p>
+            </div>
+            <form class="get-input flex-item" id="form">
+                <label for="user-input"></label>
+                <textarea id="user-input"
+                placeholder="Enter text or url (url must begin with http:// or https://)" rows="10" required></textarea>
+                <input id="submit-input" type="submit" onclick="return Client.submitHandler(event);">
+            </form>
+            <div class="show-result flex-item">
+                <div class="result" id="result">
+                    <p>This text is <span id="subjectivity"></span>
+                    with the confidence of <span id="subjectivity_confidence"></span></p>
+                    <p>Polarity is <span id="polarity"></span>
+                    with the confidence of <span id="polarity_confidence"></span></p>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <p>&copy; 2020</p>
+            <p>Powered by <a href="https://aylien.com/"><span>AYLIEN</span></a></p>
+        </footer>
+    </div>
+</body>
+</html>

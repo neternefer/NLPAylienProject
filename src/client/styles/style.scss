@@ -1,0 +1,144 @@
+
+html {
+    min-height: 100%;
+}
+
+body {
+    height: 100vh;
+    font-size: 16px;
+    color: #000;
+    line-height: 1.4;
+    font-family: "Palatino Linotype", "Book Antiqua",  serif;
+    background-image: url('./particles-abeoncliparts.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 2rem 1fr 2rem;
+    grid-template-rows: auto;
+    grid-template-areas:
+        '. h .'
+        '. m .'
+        '. f .';
+    height: 100vh;
+    width: 100vw;
+}
+
+header {
+    grid-area: h;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    font-size: 2rem;
+    padding: .5rem 0;
+}
+
+main {
+    grid-area: m;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1rem;
+}
+
+footer {
+    grid-area: f;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+}
+
+.flex-item {
+    align-self: center;
+    border-top: 2px solid green;
+    padding: .5rem 0;
+    margin-bottom: .5rem;
+}
+
+.get-input {
+    padding-top: 1rem;
+    margin-bottom: 0;
+}
+
+.result {
+    visibility: hidden;
+    background-color: #fff;
+}
+
+label {
+    margin-bottom: .5rem;
+}
+
+textarea {
+    border:1px solid rgb(193, 197, 193);
+    padding: .5rem;
+    color: rgb(53, 54, 53);
+    width: 100%;
+}
+
+input[type='submit'] {
+    background-color: green;
+    border: none;
+    color: #fff;
+    padding: 1rem;
+    margin: .5rem auto;
+}
+
+span {
+    color: green;
+}
+
+@media (min-width: 480px) {
+    .grid {
+        grid-template-rows: 5rem auto 3rem;
+        grid-template-columns: 4rem 1fr 4rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .grid {
+        grid-template-rows: 6rem auto 4rem;
+    }
+
+    .flex-item {
+        width: 60%;
+        font-size: 1.5rem;
+        padding: 1rem 0;
+    }
+
+    .get-input {
+        padding-top: 2rem;
+    }
+
+    input[type='submit'] {
+        margin: 1rem auto;
+    }
+
+    header {
+        font-size: 2.5rem;
+    }
+
+    footer {
+        font-size: 1.2rem;
+    }
+}
+
+@media (min-height: 1200px) {
+    .grid {
+        grid-template-rows: 8rem auto 6rem;
+    }
+
+    .flex-item {
+        width: 70%;
+        font-size: 2rem;
+        padding: 2rem 0;
+    }
+
+    header {
+        font-size: 3rem;
+    }
+}
