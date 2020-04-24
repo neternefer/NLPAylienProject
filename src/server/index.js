@@ -1,23 +1,25 @@
+const dotenv = require('dotenv');
+dotenv.config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-const port = 7000;
 const Aylien = require("aylien_textapi");
+
+const PORT = 7000;
 
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-
 app.use(express.static('dist'));
 
 const textApi = new Aylien({
-  application_id: 'c7f3a59b',
-  application_key: 'f07759e788f11c608aacac7301bd5c3a'
+  application_id: `${process.env.APP_ID}`,
+  application_key: `${process.env.APP_KEY}`
 });
 
 app.get('/', (req, res) => {
-    res.sendFile('dist/index.html');
+  res.sendFile('index.html')
 });
 
 app.post('/sentiment', (req, res) => {
@@ -27,4 +29,5 @@ app.post('/sentiment', (req, res) => {
   });
 });
 
-app.listen(port, () => console.log(`Aylien app listening on port ${port}!`));
+
+app.listen(PORT, () => console.log(`Example app listening on port ${PORT}!`));

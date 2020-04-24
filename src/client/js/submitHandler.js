@@ -2,24 +2,20 @@ const submitHandler = (e) => {
     e.preventDefault();
     const userInput = document.getElementById("user-input").value;
     if (!userInput) return;
+    //Determine the type of input
     const dataObject = Client.checkUrl(userInput);
-    console.log(dataObject)
+    //Obtain data
     fetch('http://localhost:7000/sentiment', {
       method: 'POST',
       mode: 'cors',
-      cache: 'no-cache',
-      credentials: 'same-origin',
       headers: {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(dataObject)
     })
-      .then(r => r.text())
-      .then((res) => {
-        console.log(res)
-        JSON.parse(res)
-      })
+      .then(r => r.json())
       .then(data => {
+        //Update UI
         document.getElementById('result').style.visibility = 'visible';
         document.getElementById('form').reset();
         const values = ['polarity', 'subjectivity', 'polarity_confidence', 'subjectivity_confidence'];
@@ -30,4 +26,6 @@ const submitHandler = (e) => {
   }
 
 
-      export { submitHandler };
+export {
+  submitHandler
+};
