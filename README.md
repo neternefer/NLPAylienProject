@@ -1,5 +1,5 @@
 # NLPAylienProject
-Nanodegree Project 4 - Text analysis with Node.js, Express and Aylien API
+Text analysis with Node.js, Express and Aylien API
 
 ## Table of contents
 * [General info](#general-info)
@@ -8,7 +8,7 @@ Nanodegree Project 4 - Text analysis with Node.js, Express and Aylien API
 * [Screenshots](#screenshots)
 
 ## General info
-Sentiment analysis of text with Node.js, Express and Aylien API
+Sentiment analysis of text created for Frontend Nanodegree project 4
 
 ## Technologies
 * Express 4.17.1
